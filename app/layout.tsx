@@ -6,6 +6,8 @@ import { Metadata } from "next"
 import { ClerkProvider } from "@clerk/nextjs"
 import { dark } from "@clerk/themes"
 import Provider from "./Provider"
+import Head from "next/head"
+import Link from "next/link"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -15,6 +17,9 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: 'LiveDocs',
   description: 'Your go-to collaborative editor',
+  icons: {
+    icon: '/favicon.ico', // This line adds the favicon
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,6 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       }}
     >
       <html lang="en" suppressHydrationWarning>
+        
+        
         <body
           className={cn(
             "min-h-screen font-sans antialiased",
